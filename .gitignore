@@ -1,0 +1,10 @@
+
+#Entorno Virtual
+env/
+
+#Contraseñas OpenAI
+key_openai.txt
+
+step03.py
+
+.env
