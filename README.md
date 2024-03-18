@@ -1,7 +1,11 @@
 
-# AI Conversation Prototype Setup Guide
+# Solution to the AI Case Study of Appinio
 
-This guide provides the steps to get the AI Conversation Prototype up and running on your machine. The prototype is designed to answer customer questions using OpenAI's GPT model.
+For this project, I chose to implement the solution using Python, without the necessity of the LangChain library. This decision was motivated by my proficiency with Python.
+
+This prototype is designed to answer questions using the OpenAI API, drawing upon a database of question-and-answer pairs. These pairs were initially processed and transformed into semantic vectors utilizing OpenAI's 'text-embedding-ada-002' model, enabling the system to understand and match the semantic similarity between user queries and the stored questions.
+
+Question Answering: When a user ask a question, the system retrieves the three most semantically similar questions from the processed database and uses them as context to generate an informed response. This response is formulated by considering the examples and the new query, ensuring that the system's answers are both relevant and accurate.
 
 ## Quick Setup
 
@@ -10,8 +14,7 @@ This guide provides the steps to get the AI Conversation Prototype up and runnin
 Clone this repository to your local machine using Git:
 
 ```sh
-git clone <repository-url>
-cd path/to/cloned/repository
+git clone <https://github.com/hernanver/hv-casestudy>
 ```
 ### 2. Create a Virtual Environment (Optional but Recommended)
 For Unix/macOS:
@@ -35,8 +38,9 @@ pip install -r requirements.txt
 ```
 
 ### 4. Set Up Your OpenAI API Key
-Obtain an API key from OpenAI.
-Create a file named key_openai.txt in the project directory, and paste your API key there.
+
+Update .env file with your OpenAI API key as:
+OPENAI_API_KEY=''
 
 ## Running the Prototype
 
@@ -59,7 +63,7 @@ This step involves converting a CSV file containing pairs of questions and answe
 Process
 
 The script reads a CSV file where each row represents a pair of question and answer, separated by a semicolon (;).
-For each question and answer pair, the script generates semantic embeddings using OpenAI's GPT-3 model. This involves converting the text into a high-dimensional vector that captures its semantic meaning.
+For each question and answer pair, the script generates semantic embeddings using OpenAI's 'text-embedding-ada-002' model. This involves converting the text into a high-dimensional vector that captures its semantic meaning.
 Each question-answer pair, along with its embeddings, is stored in a structured JSON format. This format maintains a direct association between questions, answers, and their respective embeddings, ensuring they are easily accessible for further processing.
 
 Output
@@ -78,31 +82,21 @@ Purpose
 
 The primary goal of this step is to prepare the question-answer data for subsequent stages, where semantic similarity measures will be used to find the most relevant answers based on a user's query. By converting text to embeddings, we enable a machine-understandable format that facilitates comparing the semantic similarity between the user's question and the stored questions.
 
-Usage
-
-To use this script, ensure you have a CSV file formatted with question and answer pairs, separated by semicolons. Set up your OpenAI API key, and run the script. The output will be a JSON file ready for further processing in the next steps of the project.
-
 
 <<STEP02: Continuous Conversation and CSV Logging>>
 
-This step enhances the interaction with the AI by engaging in a continuous conversation where each question from the user and the corresponding answer from the AI are dynamically processed and responded to in real-time. The key addition is the capability to log each conversation to a CSV file, enabling a persistent record of interactions. This step is crucial for analyzing conversation patterns, improving response quality, and auditing interactions.
+This step enhances the interaction with the AI by engaging in a continuous conversation where each question from the user and the corresponding answer from the AI are dynamically processed and responded to in real-time. 
 
 Key Features
 
-Dynamic Embedding Generation: For each user question, the script generates semantic embeddings using the GPT model. This facilitates identifying the most semantically similar questions from a preloaded dataset, ensuring the AI's response is contextually relevant.
-Continuous Conversation Flow: Unlike a one-off Q&A, this step maintains a running dialogue, allowing for a more natural and engaging user experience. The script listens for user input, processes it, and continues the conversation without interruption until manually stopped.
+Dynamic Embedding Generation: For each user question, the script generates semantic embeddings using the GPT model. This facilitates identifying the most semantically similar questions from the preloaded dataset, ensuring the AI's response is contextually relevant.
+
 CSV Logging: Each conversation is uniquely identified and logged into a CSV file with the format ConvID--Question--Answer--TokensUsed. This logging includes the conversation ID, user's question, AI's response, and the number of tokens used for each interaction, providing a comprehensive record of the dialogue.
+
 Implementation Details
 
 Upon each execution, the script initializes a new conversation session, identified by a unique ConvID based on the current timestamp.
 User questions are converted into embeddings and compared against a dataset of question-answer pairs to find the most similar questions, which inform the AI's responses.
-Responses are generated using OpenAI's GPT model, selected for its semantic comprehension and generation capabilities.
-The conversation, including the system's prompts, user's questions, and AI's answers, along with the tokens used for generating responses, are logged into a CSV file. This file serves as a historical record of interactions, useful for analysis and model refinement.
+Responses are generated using OpenAI's GPT 3.5 model.
 The script runs in a loop, continuously accepting user input and generating responses until manually terminated, facilitating an uninterrupted conversation flow.
-Usage
 
-Ensure your OpenAI API key is correctly set up and the necessary Python packages are installed.
-Load your dataset of question-answer pairs into the script. This dataset is used to generate contextually relevant AI responses.
-Run the script. It will automatically start a new conversation session, listen for user input, generate responses, and log the conversation to a CSV file.
-Interact with the script through the terminal by inputting questions and receiving AI-generated answers in real-time.
-To end the conversation, simply interrupt the script execution (e.g., Ctrl+C).
