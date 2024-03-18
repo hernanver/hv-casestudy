@@ -56,7 +56,7 @@ To stop the prototype, use Ctrl+C in your terminal.
 
 
 
-<<STEP01: CSV to JSON Transformation and Embedding Generation>>
+## STEP01: CSV to JSON Transformation and Embedding Generation
 
 This step involves converting a CSV file containing pairs of questions and answers into a JSON format, and generating semantic embeddings for each question and answer. The resulting JSON file organizes the data such that each question-answer pair is accompanied by its corresponding embeddings, facilitating later stages of processing where semantic similarity comparisons are required.
 
@@ -83,7 +83,7 @@ Purpose
 The primary goal of this step is to prepare the question-answer data for subsequent stages, where semantic similarity measures will be used to find the most relevant answers based on a user's query. By converting text to embeddings, we enable a machine-understandable format that facilitates comparing the semantic similarity between the user's question and the stored questions.
 
 
-<<STEP02: Continuous Conversation and CSV Logging>>
+## STEP02: Continuous Conversation and CSV Logging
 
 This step enhances the interaction with the AI by engaging in a continuous conversation where each question from the user and the corresponding answer from the AI are dynamically processed and responded to in real-time. 
 
