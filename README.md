@@ -60,18 +60,21 @@ To stop the prototype, use Ctrl+C in your terminal.
 
 ## DIAGRAM
 
+Below is a flowchart that visually represents the steps involved in our process:
+
 ![Diagrama de Flujo del Proceso](https://github.com/hernanver/hv-casestudy/blob/master/diagram.jpg?raw=true)
 
 
 ## STEP01: CSV to JSON Transformation and Embedding Generation
 
-This step involves converting a CSV file containing pairs of questions and answers into a JSON format, and generating semantic embeddings for each question and answer. The resulting JSON file organizes the data such that each question-answer pair is accompanied by its corresponding embeddings, facilitating later stages of processing where semantic similarity comparisons are required.
 
-### Process
+Objective: Transform question-and-answer pairs from a CSV format into JSON and generate semantic embeddings for each pair.
 
-The script reads a CSV file where each row represents a pair of question and answer, separated by a semicolon (;).
-For each question and answer pair, the script generates semantic embeddings using OpenAI's 'text-embedding-ada-002' model. This involves converting the text into a semantic vector that captures its meaning.
-Each question-answer pair, along with its embeddings, is stored in a structured JSON format. This format maintains a direct association between questions, answers, and their respective embeddings, ensuring they are easily accessible for further processing.
+### Process Overview:
+
+The script reads a CSV file where each row corresponds to a question-and-answer pair, delimited by a semicolon (;).
+For each pair, it utilizes OpenAI's 'text-embedding-ada-002' model to generate semantic embeddings. This process transforms the textual content into a semantic vector, encapsulating the essence of its meaning.
+The pairs, along with their embeddings, are then organized into a structured JSON format, establishing a clear link between the questions, answers, and their corresponding embeddings. This setup facilitates the next stages of processing, particularly for conducting semantic similarity comparisons.
 
 ### Output
 
@@ -89,7 +92,7 @@ json
 
 ## STEP02&3: Continuous Conversation and CSV Logging
 
-This step enhances the interaction with the AI by engaging in a continuous conversation where each question from the user and the corresponding answer from the AI are dynamically processed and responded to in real-time. 
+Objective: Enhance AI interaction by facilitating a real-time, continuous conversation flow, dynamically addressing each user query with contextually appropriate responses.
 
 
 ### Implementation Details
