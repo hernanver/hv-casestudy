@@ -58,7 +58,7 @@ To stop the prototype, use Ctrl+C in your terminal.
 
 ## About the Process:
 
-## DIAGRAM
+## GENERAL DIAGRAM
 
 Below is a flowchart that visually represents the steps involved in our process:
 
