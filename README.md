@@ -96,4 +96,4 @@ The script runs in a loop, continuously accepting user input and generating resp
 
 
 
-![Diagrama de Flujo del Proceso](https://github.com/hernanver/hv-casestudy/blob/master/diagrama.jpg?raw=true)
+![Diagrama de Flujo del Proceso](https://github.com/hernanver/hv-casestudy/blob/master/diagram.jpg?raw=true)
