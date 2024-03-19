@@ -56,7 +56,12 @@ python3 index.py
 To stop the prototype, use Ctrl+C in your terminal.
 
 
-## About the Scripts:
+## About the Process:
+
+## DIAGRAM
+
+![Diagrama de Flujo del Proceso](https://github.com/hernanver/hv-casestudy/blob/master/diagram.jpg?raw=true)
+
 
 ## STEP01: CSV to JSON Transformation and Embedding Generation
 
@@ -82,7 +87,7 @@ json
 
 
 
-## STEP02: Continuous Conversation and CSV Logging
+## STEP02&3: Continuous Conversation and CSV Logging
 
 This step enhances the interaction with the AI by engaging in a continuous conversation where each question from the user and the corresponding answer from the AI are dynamically processed and responded to in real-time. 
 
@@ -96,4 +101,3 @@ The script runs in a loop, continuously accepting user input and generating resp
 
 
 
-![Diagrama de Flujo del Proceso](https://github.com/hernanver/hv-casestudy/blob/master/diagram.jpg?raw=true)
