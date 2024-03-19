@@ -113,13 +113,14 @@ if __name__ == "__main__":
             similar_questions = find_most_similar_questions(user_embedding, qa_data)
 
             context = generate_answer_context(similar_questions)
-            print("CONTEXTO:", context)
+            
+            # print("CONTEXT:", context)
 
             # Prepare the chatbot prompt with context
             system_message = "You should be able to answer a potential customer's question that might be asked through Live Chat or email. Please use the following three examples to answer the user's question."
             conversation = [{'role': 'system', 'content': system_message + context}, {'role': 'user', 'content': user_input}]
 
-            print("Conversation:", conversation)
+            #print("Conversation:", conversation)
 
             # OpenAI's Answer
             chat_output, tokens_used = chatbot(conversation)

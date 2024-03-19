@@ -94,3 +94,6 @@ This step enhances the interaction with the AI by engaging in a continuous conve
 The script runs in a loop, continuously accepting user input and generating responses until manually terminated, facilitating an uninterrupted conversation flow.
 
 
+
+
+![Diagrama de Flujo del Proceso](https://github.com/hernanver/hv-casestudy/blob/main/diagrama.jpg?raw=true)
